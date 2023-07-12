@@ -2,26 +2,27 @@ import React, {useState} from 'react';
 import './App.css';
 import FamilyForm from './FamilyForm';
 import FamilyInfo from './FamilyInfo';
+import { v4 as uuid } from 'uuid';
 
 function App() {
 const INITIAL_STATE = [
-  // {id: 1,
-  //   fullname: "Bishnu Thapa",
-  //   fname: "Ran B Thapa",
-  //   city: "Arghakhanchi",
-  //   email: "ran@gmail.com"
-  // },
-  // {id: 2,
-  //   fullname: "Basundhara Thapa",
-  //   fname: "Ran B Thapa",
-  //   city: "kingston",
-  //   email: "basundhara@gmail.com"
-  // }
+  {id: uuid(),
+    fullname: "Bishnu Thapa",
+    fname: "Ran B Thapa",
+    city: "Arghakhanchi",
+    email: "ran@gmail.com"
+  },
+  {id: uuid(),
+    fullname: "Basundhara Thapa",
+    fname: "Ran B Thapa",
+    city: "kingston",
+    email: "basundhara@gmail.com"
+  }
 ]
 const [state, setState] = useState(INITIAL_STATE);
 
-const addFamily = (fullname, fname, city, email)=>{
-  setState(prev=>[{fullname, fname, city, email}, ...prev])
+const addFamily = (inputForm)=>{
+  setState(prev=>[{id: uuid(), ...inputForm}, ...prev])
 }
 
 

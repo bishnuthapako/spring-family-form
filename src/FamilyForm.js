@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import "./FamilyForm.css"
 
+
 function FamilyForm({addFamily}) {
     const INITIALSTATE = {
         fullname: "",
@@ -21,7 +22,7 @@ function FamilyForm({addFamily}) {
     const handleSubmit = (e)=>{
         const {fullname, fname, city, email} = formData;
         e.preventDefault();
-        addFamily(fullname, fname, city, email)
+        addFamily({...formData})
     }
 
   return (
